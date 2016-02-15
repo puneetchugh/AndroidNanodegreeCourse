@@ -12,5 +12,5 @@
         android:layout_gravity="center_horizontal"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:text="Fragment One"/>
+        android:text="Add an item"/>
 </LinearLayout>
