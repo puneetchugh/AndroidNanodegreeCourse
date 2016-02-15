@@ -9,7 +9,30 @@ import android.widget.TextView;
 
 import java.util.List;
 
-;
+/**
+ * Recycler View:
+ *
+ * When we have long lists to display and we use ListViews every item has to be inflated before forming the ListView
+ * which not only wastes a lot of memory but also slows down the application. So, this necessitated the need
+ * for Recyler Views. At a time we can only display part of list when the list is very huge.
+ * For example, at one point of time we can only have 4 items on the screen out of 20 items in the list.
+ * So, when we scroll, the item going out of view gives way to new item coming. So, this way we would
+ * only inflate 4 views instead of views for all 20 items.
+ *
+ *
+ * RecyclerView class requires creating a static class, ViewHolder that would contain all the views for a single
+ * item. The ViewHolder class would extend RecyclerView.ViewHolder and the main RecyclerView class would extend
+ * RecyclerView.Adapter<RecyclerView class.ViewHolder Class>
+ *
+ * Then, we need to implement the mandatory functions "onCreateViewHolder", "onBindViewHolder", "getItemCount"
+ *
+ * onCreateViewHolder - we need to inflate the view for the item and also reference the TextView, ButtonView
+ *                      with the corresponding xml TextView, ButtonView, respectively.
+ *
+ * onBindViewHolder - this method requires defining the text for different views defined in the ViewHolder class
+ *
+ * getItemCount - we return the count of items in this method
+ */
 
 /**
  * Created by puneet on 2/15/16.
