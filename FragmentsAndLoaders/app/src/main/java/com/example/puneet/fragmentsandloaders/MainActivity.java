@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
 
     ListView listView;
     ArrayAdapter<String> listAdapters;
-    String fragments[] = {"Fragment_one", "Fragment_two"};
+    String fragments[] = {"Sort by popularity", "Sort by date"};
     DrawerLayout drawerLayout;
 
 

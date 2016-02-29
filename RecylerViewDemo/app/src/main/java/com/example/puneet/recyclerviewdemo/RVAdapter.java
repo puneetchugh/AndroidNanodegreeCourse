@@ -15,6 +15,7 @@ import java.util.List;
  */
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
 
+    List<Person> persons;
     public static class PersonViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
         TextView personName;
@@ -30,7 +31,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
         }
     }
 
-    List<Person> persons;
+
 
     RVAdapter(List<Person> persons){
         this.persons = persons;
