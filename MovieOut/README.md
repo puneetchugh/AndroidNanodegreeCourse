@@ -4,7 +4,7 @@ The MovieOut Android App displays movies baesed on either popularirty or rating.
 
 #Technical Aspects
 
-This app uses Android SDK 22. The app uses navigation drawer to present options to the user on how to sort and display the movies. The user is presented with 2 options. Those two options are opened in different fragments.
+This app uses Android SDK 22. The app uses navigation drawer to present options to the user on how to sort and display the movies. The user is presented with 2 options. Those two options are opened using different fragments.
 
 The app also uses Material Design feature like Recycler View. Recycler view is used to display the movie posters using Grid Layout. The benefit of using Recycler View other than being space efficient is that one can use any layout be it GridLayout, LinearLayout, etc.
 
