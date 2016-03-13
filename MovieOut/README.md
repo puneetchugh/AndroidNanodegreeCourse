@@ -9,7 +9,7 @@ This app uses Android SDK 22. The app uses navigation drawer to present options 
 The app also uses Material Design feature like Recycler View. Recycler view is used to display the movie posters using Grid Layout. The benefit of using Recycler View other than being space efficient is that one can use any layout be it GridLayout, LinearLayout, etc.
 
 
-![Initial Screen with Navigation Drawer Out](http://imgur.com/vo7I2k1)
+![Initial Screen with Navigation Drawer Out](http://imgur.com/vo7I2k1 =100x20)
 
 ![Movies Display in Grid Format](http://imgur.com/0rL8FDU)
 
