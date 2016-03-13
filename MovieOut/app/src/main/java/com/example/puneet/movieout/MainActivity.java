@@ -1,35 +1,66 @@
 package com.example.puneet.movieout;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.example.puneet.movieout.R.*;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity {
 
-    private GridLayoutManager gridLayoutManager;
-    private List<String> movieList;
-  //  RecyclerViewClass rcAdapter;
+    ListView listView;
+    ArrayAdapter<String> listAdapters;
+    String fragments[] = {"Sort by popularity", "Sort by Rating"};
+    DrawerLayout drawerLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        gridLayoutManager = new GridLayoutManager(MainActivity.this, 4);
+        listView = (ListView) findViewById(R.id.navList);
 
-        RecyclerView rView = (RecyclerView)findViewById(R.id.recycler_view);
-        rView.setHasFixedSize(true);
-        rView.setLayoutManager(gridLayoutManager);
+        listAdapters = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, fragments);
 
-        movieList = testingMovies();
+        listView.setAdapter(listAdapters);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        RecyclerViewClass rcAdapter = new RecyclerViewClass(movieList);
-        rView.setAdapter(rcAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Fragment fragment;
+
+
+                switch (position) {
+
+                    case 0:
+                        fragment = new FragmentOne();
+                        break;
+
+                    case 1:
+                        fragment = new FragmentTwo();
+                        break;
+
+                    default:
+                        fragment = new FragmentOne();
+                }
+
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.relative_view_nav_drawer, fragment).commit();
+                drawerLayout.closeDrawers();
+            }
+        });
+
     }
 
     @Override
