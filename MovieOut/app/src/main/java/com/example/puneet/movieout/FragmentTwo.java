@@ -82,15 +82,7 @@ public class FragmentTwo extends Fragment {
 
                 recyclerView.setLayoutManager(layoutManager);
                 recyclerView.setAdapter(adapter);
- /*               adapter.SetOnItemClickListener(new MyAdapter.OnItemClickListener() {
 
-                    @Override
-                    public void onItemClick(View v, int position) {
-                        Intent intent = new Intent(getActivity(), MovieInfoDisplay.class);
-                        intent.putExtra("MOVIE_DATA", movieDataArrayList);
-                        startActivity(intent);
-                    }
-                });*/
             }
 
             @Override

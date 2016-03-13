@@ -12,9 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends Activity {
 
     ListView listView;
@@ -85,16 +82,5 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public List<String> testingMovies(){
 
-        List<String> newList = new ArrayList<>();
-        newList.add("Hum-Tim");
-        newList.add("HUmSafar");
-        newList.add("Gumshuda");
-        newList.add("Josh");
-        newList.add("Tiranga");
-        newList.add("Satyam Shivam Sundaram");
-        newList.add("Sholay");
-        return newList;
-    }
 }

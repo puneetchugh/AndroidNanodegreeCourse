@@ -22,14 +22,13 @@ public class MovieInfoDisplay extends Activity {
     private TextView overview;
     private TextView actualOverview;
     private Intent intent;
-    //private ArrayList<OneMovieData> movieData;
     private OneMovieData oneMovieData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_info_display);
         moviePoster = (ImageView) findViewById(R.id.imageView);
-        //movieName = (TextView) findViewById(R.id.textView);
+
         actualMovieName = (TextView) findViewById(R.id.textView2);
 
         userRating = (TextView) findViewById(R.id.textView3);
@@ -49,12 +48,6 @@ public class MovieInfoDisplay extends Activity {
 
 
         actualMovieName.setText(oneMovieData.getOriginalTitle());
-        int lineCount = actualMovieName.getLineCount();
-        if(actualMovieName.getLineCount() > 1){
-            actualMovieName.setHeight(50);
-           // movieName.setHeight(50);
-            actualMovieName.setText(oneMovieData.getOriginalTitle());
-        }
         actualuserRating.setText(oneMovieData.getUserRating().toString());
         actualReleaseDate.setText(oneMovieData.getReleaseDate());
         actualOverview.setText(oneMovieData.getOverview());

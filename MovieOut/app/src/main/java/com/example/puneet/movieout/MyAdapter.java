@@ -21,7 +21,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     ArrayList<OneMovieData> movieDataList;
     Context mainContext;
-    //OnItemClickListener mOnItemClickListener;
+
 
     MyAdapter(ArrayList<OneMovieData> movieDataList , Context context){
         this.movieDataList = movieDataList;
@@ -32,12 +32,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        //public OnItemClickListener onItemClickListener;
         public ImageView moviePoster;
         MyViewHolder(View view){
             super(view);
             moviePoster = (ImageView) view.findViewById(R.id.picture);
-            //view.setOnClickListener();
 
             itemView.setOnClickListener(new View.OnClickListener() {
 
@@ -53,25 +51,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         }
 
-        /*
-
-        @Override
-        public void onClick(View v) {
-
-            onItemClickListener.onItemClick(v, getLayoutPosition());
-        }*/
 
 
     }
-    /*
-    public interface OnItemClickListener {
-        void onItemClick(View view , int position);
-    }
 
-
-    public void SetOnItemClickListener(final OnItemClickListener mOnItemClickListener){
-        this.mOnItemClickListener = mOnItemClickListener;
-    }*/
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i){
@@ -79,16 +62,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         final View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.one_item, viewGroup, false);
         MyViewHolder myViewHolder = new MyViewHolder(view);
 
-  /*      view.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                int pos = view.getChildAdapterPosition(v);
-                if (pos >= 0 && pos < getItemCount()) {
-                    Toast.makeText(mainContext, "User click", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });*/
         return myViewHolder;
     }
 
@@ -101,12 +74,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder, int position){
 
-
-        //for(int counter=0; counter < movieDataList.size(); counter++) {
             Picasso.with(mainContext)
                     .load("http://image.tmdb.org/t/p/w185/"+movieDataList.get(position).getMoviePoster())
                     .into(myViewHolder.moviePoster);
-        //}
     }
 
 }
