@@ -21,6 +21,17 @@
             android:name=".MovieInfoDisplay"
             android:label="@string/title_activity_movie_info_display" >
         </activity>
+
+        <activity
+            android:name=".MyYouTubePlayer"
+            android:label="MyYouTubePlayer">
+        </activity>
+
+        <provider
+            android:name=".MyMovieData"
+            android:authorities="com.example.puneet.provider.Movie"
+            android:exported="false">
+        </provider>
     </application>
 
 </manifest>

@@ -13,15 +13,17 @@ public class OneMovieData implements Parcelable{
     private String overview;
     private Double userRating;
     private String releaseDate;
+    private int id;
 
 
-    public OneMovieData(String originalTitle, String moviePoster, String overview, Double userRating, String releaseDate){
+    public OneMovieData(String originalTitle, String moviePoster, String overview, Double userRating, String releaseDate, int id){
 
         this.originalTitle = originalTitle;
         this.moviePoster = moviePoster;
         this.overview = overview;
         this.userRating = userRating;
         this.releaseDate = releaseDate;
+        this.id = id;
     }
     public static final Parcelable.Creator<OneMovieData> CREATOR = new Parcelable.Creator<OneMovieData>() {
         public OneMovieData createFromParcel(Parcel p) {
@@ -40,6 +42,7 @@ public class OneMovieData implements Parcelable{
         this.overview = p.readString();
         this.userRating = p.readDouble();
         this.releaseDate = p.readString();
+        this.id = p.readInt();
     }
 
     @Override
@@ -55,6 +58,7 @@ public class OneMovieData implements Parcelable{
         dest.writeString(overview);
         dest.writeDouble(userRating);
         dest.writeString(releaseDate);
+        dest.writeInt(id);
     }
 
     public String getOriginalTitle(){
@@ -76,4 +80,10 @@ public class OneMovieData implements Parcelable{
     public String getReleaseDate(){
         return releaseDate;
     }
+
+    public int getId(){
+        return id;
+    }
+
+
 }

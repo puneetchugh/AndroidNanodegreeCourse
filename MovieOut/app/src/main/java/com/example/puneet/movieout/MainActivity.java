@@ -14,9 +14,10 @@ import android.widget.ListView;
 
 public class MainActivity extends Activity {
 
+    int pos;
     ListView listView;
     ArrayAdapter<String> listAdapters;
-    String fragments[] = {"Sort by popularity", "Sort by Rating"};
+    String fragments[] = {"Sort by popularity", "Sort by Rating", "Favorites"};
     DrawerLayout drawerLayout;
 
     @Override
@@ -37,7 +38,7 @@ public class MainActivity extends Activity {
 
                 Fragment fragment;
 
-
+                pos = position;
                 switch (position) {
 
                     case 0:
@@ -46,6 +47,10 @@ public class MainActivity extends Activity {
 
                     case 1:
                         fragment = new FragmentTwo();
+                        break;
+
+                    case 2:
+                        fragment = new FragmentThree();
                         break;
 
                     default:
@@ -80,6 +85,10 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public int getPos(){
+        return pos;
     }
 
 

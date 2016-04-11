@@ -69,7 +69,8 @@ public class FragmentTwo extends Fragment {
                                 singleResult.getPosterPath(),
                                 singleResult.getOverview(),
                                 singleResult.getVoteAverage(),
-                                singleResult.getReleaseDate());
+                                singleResult.getReleaseDate(),
+                                singleResult.getId());
                         movieDataArrayList.add(counter, oneMovieData);
                     }
                 }

@@ -68,7 +68,8 @@ public class FragmentOne extends Fragment {
                                 singleResult.getPosterPath(),
                                 singleResult.getOverview(),
                                 singleResult.getVoteAverage(),
-                                singleResult.getReleaseDate());
+                                singleResult.getReleaseDate(),
+                                singleResult.getId());
                         movieDataArrayList.add(counter, oneMovieData);
                     }
                 }
@@ -76,7 +77,12 @@ public class FragmentOne extends Fragment {
 
                 mcontext = getActivity();
                 layoutManager = new GridLayoutManager(mcontext, 2, LinearLayoutManager.VERTICAL, false);
-                adapter = new MyAdapter(movieDataArrayList, mcontext);
+                adapter = new MyAdapter(movieDataArrayList, mcontext, new MovieItemClickListener() {
+                    @Override
+                    public void onMovieClick(OneMovieData oneMovieData) {
+                        // send oneMovieData back to main activity here
+                    }
+                });
 
 
                 recyclerView.setLayoutManager(layoutManager);

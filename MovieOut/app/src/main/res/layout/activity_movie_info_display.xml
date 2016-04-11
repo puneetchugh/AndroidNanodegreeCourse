@@ -1,7 +1,49 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/actionbarT"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
+        android:background="@color/primaryColor"
+
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/toolbarmenucontainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <ImageButton
+
+                android:id="@+id/favorite_star"
+                android:background="@drawable/my_selector"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:clickable="true"
+                android:scaleType="fitXY"/>
+
+
+
+        </RelativeLayout>
+</android.support.v7.widget.Toolbar>
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_below="@+id/actionbarT"
     android:fillViewport="true">
 
     <RelativeLayout
@@ -18,6 +60,7 @@
 
 
         <TextView
+
             android:layout_width="wrap_content"
             android:id="@+id/textView2"
             android:layout_height="wrap_content"
@@ -27,13 +70,16 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
+
+
         <ImageView
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:id="@+id/imageView"
-            android:layout_below="@+id/textView2"/>
+            android:layout_below="@+id/textView2"
+            android:src="@drawable/noposter"/>
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
@@ -98,3 +144,4 @@
             android:textSize="20sp"/>
     </RelativeLayout>
 </ScrollView>
+</RelativeLayout>
